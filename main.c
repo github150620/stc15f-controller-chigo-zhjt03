@@ -3,6 +3,8 @@
 
 #define MAIN_Fosc	35000000L
 
+const u8 data[12] = {0xFF, 0x00, 0xFF, 0x00, 0xFF, 0x00, 0x9B, 0x64, 0xAB, 0x54, 0x54, 0xAB};
+
 void delay_ms(unsigned char ms)
 {
 	unsigned int i;
@@ -86,19 +88,6 @@ void main(void)
 	EA = 1;
 
 	Timer0_Run();
-  
-	data[0] = 0xFF;
-	data[1] = 0x00;
-	data[2] = 0xFF;
-	data[3] = 0x00;
-	data[4] = 0xFF;
-	data[5] = 0x00;
-	data[6] = 0x9B;
-	data[7] = 0x64;
-	data[8] = 0xAB;
-	data[9] = 0x54;
-	data[10] = 0x54;
-	data[11] = 0xAB;
 
 	while (1) {
 		if (P32 == 0) {
